@@ -6,8 +6,4 @@
 
 Tracking app that uses backend authentication using MongoDB.
 Front-end REACT app with redux.
-
-
-## Backend Info
-
-Written in JavaScript using Express server.
+Back-end Express server.
