@@ -8,7 +8,7 @@ const User = require('../models/userModel')
 // @route  /api/users
 // @access Public
 const registerUser = asyncHandler(async (req, res) => {
-  console.log(req.body)
+  // console.log(req.body)
   const { name, email, password } = req.body
 
   //validation
