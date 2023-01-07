@@ -26,7 +26,6 @@ export const register = createAsyncThunk(
           error.response.data.message) ||
         error.message ||
         error.toString()
-
       return thunkAPI.rejectWithValue(message)
     }
   }
@@ -65,7 +64,7 @@ export const authSlice = createSlice({
       state.isLoading = false
       state.isError = false
       state.isSuccess = false
-      state.isMessage = ''
+      state.message = ''
     },
   },
   extraReducers: (builder) => {
