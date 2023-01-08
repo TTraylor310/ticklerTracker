@@ -8,6 +8,8 @@ import Register from './pages/Register'
 import NewTicket from './pages/NewTicket'
 import PrivateRoute from './components/PrivateRoute'
 
+
+// remember to work the database first next time.
 const App = () => {
   return (
     <>
