@@ -9,7 +9,9 @@ import NewTicket from './pages/NewTicket'
 import PrivateRoute from './components/PrivateRoute'
 
 
-// remember to work the database first next time.
+// remember to work the database first next time
+// check the router and private routes which need to be protected
+
 const App = () => {
   return (
     <>
