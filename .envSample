@@ -1,0 +1,4 @@
+NODE_ENV = development
+PORT = <port number for backend server>
+MONGO_URI = <mongoDB connection>
+JWT_SECRET = <secret>
