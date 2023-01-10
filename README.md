@@ -4,6 +4,10 @@
 
 ## Basic Information
 
-Tracking app that uses backend authentication using MongoDB.
-Front-end REACT app with redux.
-Back-end Express server.
+Ticket tracking application that allows user to submit tickets for items that need technical support.
+
+
+### Features
+
+Front End: REACT with Redux Toolkit
+  - 

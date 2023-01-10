@@ -8,15 +8,12 @@ const User = require('../models/userModel')
 // @route  /api/users
 // @access Public
 const registerUser = asyncHandler(async (req, res) => {
-  // console.log(req.body)
   const { name, email, password } = req.body
-
   //validation
   if (!name || !email || !password) {
     res.status(400)
     throw new Error('Please include all fields')
   }
-
   // Find if user already exists
   const userExists = await User.findOne({ email })
   if (userExists) {
@@ -52,9 +49,7 @@ const registerUser = asyncHandler(async (req, res) => {
 // @access Public
 const loginUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body
-
   const user = await User.findOne({ email })
-
   // check user and passwords match
   if (user && (await bcrypt.compare(password, user.password))) {
     res.status(200).json({
@@ -67,7 +62,6 @@ const loginUser = asyncHandler(async (req, res) => {
     res.status(401)
     throw new Error('Invalid credentials')
   }
-  
 })
 
 // @desc   Get current user
