@@ -14,7 +14,7 @@ const initialState = {
 
 // get Ticket notes
 export const getNotes = createAsyncThunk(
-  'notes/getAll'
+  'notes/getAll',
   async (ticketData, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token
