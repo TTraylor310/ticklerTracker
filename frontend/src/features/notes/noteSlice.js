@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import ticketSlice from '../tickets/ticketSlice';
+// import ticketSlice from '../tickets/ticketSlice';
 import noteService from './noteService'
 
 
@@ -7,7 +7,7 @@ const initialState = {
   notes: [],
   isError: false,
   isSuccess: false,
-  isError: false,
+  isLoading: false,
   message: '',
 }
 
@@ -20,6 +20,7 @@ export const getNotes = createAsyncThunk(
       const token = thunkAPI.getState().auth.user.token
       return await noteService.getNotes(ticketData, token)
     } catch (error) {
+      console.log('check if here..')
       const message =
         (error.response &&
           error.response.data &&
@@ -30,6 +31,10 @@ export const getNotes = createAsyncThunk(
     }
   }
 )
+
+
+
+
 
 
 export const noteSlice = createSlice({
