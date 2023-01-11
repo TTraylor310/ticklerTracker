@@ -5,7 +5,7 @@ import { toast } from 'react-toastify'
 import Modal from 'react-modal'
 import { FaPlus } from 'react-icons/fa'
 import { getTicket, closeTicket, reset } from '../features/tickets/ticketSlice'
-import { getNotes, reset as notesReset } from '../features/notes/noteSlice'
+import { getNotes, createNote, reset as notesReset } from '../features/notes/noteSlice'
 import Spinner from '../components/Spinner'
 import BackButton from '../components/BackButton'
 import NoteItem from '../components/NoteItem'
@@ -68,7 +68,8 @@ const Ticket = () => {
 
   const onNoteSubmit = (e) => {
     e.preventDefault()
-    
+    dispatch(createNote({noteText, ticketId}))
+    closeModal()
   }
 
   return (
@@ -121,6 +122,9 @@ const Ticket = () => {
                 value={noteText}
                 onChange={(e) => setNoteText(e.target.value)}
               ></textarea>
+            </div>
+            <div className="form-group">
+              <button className="btn" type='submit'>Submit</button>
             </div>
           </form>
         </Modal>
