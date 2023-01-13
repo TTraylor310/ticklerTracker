@@ -1,7 +1,7 @@
 {
-  "homepage": "https://ticket-tracker-whole.vercel.app/",
   "name": "tray-ticket-tracker",
   "version": "1.0.0",
+  "proxy": "http://localhost:5000",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
