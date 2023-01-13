@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
-import { Link, useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { toast } from 'react-toastify'
 import Modal from 'react-modal'
 import { FaPlus } from 'react-icons/fa'
-import { getTicket, closeTicket, reset } from '../features/tickets/ticketSlice'
-import { getNotes, createNote, reset as notesReset } from '../features/notes/noteSlice'
+import { getTicket, closeTicket } from '../features/tickets/ticketSlice'
+import { getNotes, createNote } from '../features/notes/noteSlice'
 import Spinner from '../components/Spinner'
 import BackButton from '../components/BackButton'
 import NoteItem from '../components/NoteItem'
@@ -28,7 +28,8 @@ const Ticket = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [noteText, setNoteText] = useState('')
 
-  const { ticket, isLoading, isSuccess, isError, message } = useSelector(
+  // const { ticket, isLoading, isSuccess, isError, message } = useSelector(
+  const { ticket, isLoading, isError, message } = useSelector(
     (state) => state.tickets
   )
   const { notes, isLoading: notesIsLoading } = useSelector(
@@ -37,7 +38,7 @@ const Ticket = () => {
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const params = useParams()
+  // const params = useParams()
   const { ticketId } = useParams()
 
   useEffect(() => {
