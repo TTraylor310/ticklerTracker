@@ -1,7 +1,7 @@
 const express = require('express')
 const dotenv = require('dotenv').config()
 const colors = require('colors')
-
+const path = require('path')
 const PORT = process.env.PORT
 const {errorHandler } = require('./middleware/errorMiddleware')
 const connectDB = require('./config/db')
@@ -13,12 +13,8 @@ app.use(express.urlencoded({extended: false}))
 
 connectDB()
 
-app.get('/', (req, res) => {
-  res.send('Tray Server Tickler Ticker App HOMEPAGE')
-})
 
 app.use('/api/users', require('./routes/userRoutes'))
-
 app.use('/api/tickets', require('./routes/ticketRoutes'))
 
 
@@ -30,6 +26,11 @@ app.get("*", function(_, res) {
         function (err) {
             if(err) {
                 res.status(500).send(err)
+            }
+            else {
+              app.get('/', (req, res) => {
+                res.send('Tray Server Tickler Ticker App HOMEPAGE')
+              })
             }
         }
     )
