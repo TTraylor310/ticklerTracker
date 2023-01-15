@@ -1,7 +1,7 @@
 const express = require('express')
 const dotenv = require('dotenv').config()
 const path = require('path')
-
+const cors = require('cors')
 const colors = require('colors')
 const PORT = process.env.PORT
 
@@ -11,7 +11,7 @@ const connectDB = require('./src/config/db')
 const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-
+app.use(cors())
 connectDB()
 
 app.use('/api/users', require('./src/routes/userRoutes'))
