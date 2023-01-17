@@ -9,6 +9,7 @@ const User = require('../models/userModel')
 // @access Public
 const registerUser = asyncHandler(async (req, res) => {
   const { name, email, password } = req.body
+
   //validation
   if (!name || !email || !password) {
     res.status(400)
@@ -40,7 +41,7 @@ const registerUser = asyncHandler(async (req, res) => {
     })
   } else {
     res.status(400)
-    throw new error('Invalid user data')
+    throw new Error('Invalid user data')
   }
 })
 
