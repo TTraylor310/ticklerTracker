@@ -2,15 +2,15 @@ const mongoose = require('mongoose')
 
 const noteSchema = mongoose.Schema(
   {
-      user: {
+    user: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
-      ref: 'User'
+      ref: 'User',
     },
-      ticket: {
+    ticket: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
-      ref: 'Ticket'
+      ref: 'Ticket',
     },
     text: {
       type: String,
@@ -23,7 +23,6 @@ const noteSchema = mongoose.Schema(
     staffId: {
       type: String,
     },
-
   },
   {
     timestamps: true,
